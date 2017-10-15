@@ -23,6 +23,8 @@ int main() {
     for (int i = n-1; i >= 0; i--) {
         cout << arrayofn[i] << " ";   
     }
-    
+    free(arrayofn);
+    arrayofn = nullptr;
+
     return 0;
 }
