@@ -1,3 +1,8 @@
+/*
+* Score: 50/100
+* Due to timeout
+* TODO(sysco): code a better fibonacci sequence algorithm...
+*/
 #include <iostream>
 #include <sstream>
 
@@ -21,13 +26,17 @@ void sum_evens(long& limit) {
 	unsigned t{};
 	unsigned total{};
 	std::stringstream str_total;
+
 	while(b < limit){
+
 		if(b % 2 == 0 && b)
 			total += b;
+
 		t = a + b;
 		a = b;
 		b = t;
 	}
+
 	str_total << total;
 	std::cout << str_total.str() << std::endl;
 }
