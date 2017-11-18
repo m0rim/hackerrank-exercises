@@ -1,12 +1,15 @@
 /*
-* Score: 50/100
+* Score: 75/100
 * Due to timeout
-* TODO(sysco): code a better fibonacci sequence algorithm...
+* TODO(sysco): Fix test case 3
 */
 #include <iostream>
 #include <sstream>
+#include <cmath>
 
-void sum_evens(long& limit);
+const double inv_sqrt_five = 0.44721359549995793928183473374626;
+const double phi = 1.6180339887498948482045868343656;
+void sum_evens(const long& limit);
 
 int main(){
     int t;
@@ -20,21 +23,17 @@ int main(){
     return 0;
 }
 
-void sum_evens(long& limit) {
-	unsigned a = 1;
-	unsigned b{} ;
-	unsigned t{};
-	unsigned total{};
+void sum_evens(const long& limit) {
+	long a = 3;
+	long long b{};
+	long long total{};
 	std::stringstream str_total;
-
 	while(b < limit){
-
-		if(b % 2 == 0 && b)
+		b = (long long)floor((pow(phi, a) * inv_sqrt_five + 0.5 ));
+		// std::cerr << "LOGGING: " << b << std::endl;
+		if(b % 2 == 0 && b < limit)
 			total += b;
-
-		t = a + b;
-		a = b;
-		b = t;
+		a += 3;
 	}
 
 	str_total << total;
